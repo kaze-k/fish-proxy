@@ -70,7 +70,7 @@ Check procedure will use `curl` and the IP data come from `ipip.net`, `ip.cn` & 
 ## Uninstallation
 
 ```fish
-fisher uninstall kaze-k/fish-proxy
+fisher remove kaze-k/fish-proxy
 rm -rf ~/.fish-proxy
 ```
 
