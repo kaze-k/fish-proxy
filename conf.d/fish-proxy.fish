@@ -229,7 +229,6 @@ end
 # ==================================================
 
 function __enable_proxy -d "enable proxy"
-  __hide_cursor
   if [ -z "$__FISHPROXY_STATUS" ] || [ -z "$__FISHPROXY_SOCKS5" ] || [ -z "$__FISHPROXY_HTTP" ]
     echo "========================================"
     echo "fish-proxy can not read configuration."
@@ -247,7 +246,10 @@ function __enable_proxy -d "enable proxy"
     __disable_proxy_all
     __disable_proxy_git
     __disable_proxy_npm
+    set_color -i green
     echo "Done!"
+    set_color normal
+    __hide_cursor
     echo "----------------------------------------"
     set_color red
     echo "Enable proxy for:"
@@ -266,8 +268,8 @@ function __enable_proxy -d "enable proxy"
     echo -n "Done!"
     set_color normal
     echo ""
+    __show_cursor
   end
-  __show_cursor
 end
 
 function __disable_proxy -d "disable proxy"
